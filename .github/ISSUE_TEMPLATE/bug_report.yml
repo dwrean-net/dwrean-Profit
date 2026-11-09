@@ -1,0 +1,28 @@
+name: "Αναφορά προβλήματος"
+description: "Κάτι δεν λειτουργεί όπως αναμενόταν"
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Σε παρακαλούμε να μη δημοσιεύσεις ΑΦΜ, ονόματα πελατών ή πραγματικά οικονομικά δεδομένα."
+  - type: textarea
+    id: issue
+    attributes:
+      label: "Τι συμβαίνει;"
+      description: "Περιέγραψε το πρόβλημα με απλά λόγια."
+      placeholder: "Όταν επιλέγω..., εμφανίζεται..."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Πώς μπορούμε να το αναπαράγουμε;"
+      placeholder: "Βήμα 1, βήμα 2... (μόνο με υποθετικά ποσά)"
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: "Browser / συσκευή"
+      placeholder: "π.χ. Chrome σε Windows 11"

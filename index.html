@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081729">
+  <meta name="description" content="Δωρεάν υπολογισμός κερδοφορίας για ελεύθερους επαγγελματίες στην Ελλάδα. Έσοδα, έξοδα, ΦΠΑ, ΕΦΚΑ και εκτίμηση φόρου 2026.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="dwrean Profit | Πόσα χρήματα σου μένουν πραγματικά;">
+  <meta property="og:description" content="Δωρεάν, ελληνικό εργαλείο κερδοφορίας για ελεύθερους επαγγελματίες και ατομικές επιχειρήσεις.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>dwrean Profit — Δωρεάν υπολογιστής κερδοφορίας για επαγγελματίες</title>
+  <script defer src="js/calculations.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Μετάβαση στο περιεχόμενο</a>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="https://www.dwrean.net/" target="_blank" rel="noopener noreferrer" aria-label="dwrean.net — αρχική σελίδα">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 34 34" width="26" height="26"><path d="M5 25l8-9 5 5 11-13" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8h8v8" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>dwrean<span class="brand-accent"> Profit</span></span>
+      </a>
+      <nav class="top-actions" aria-label="Βασικές ενέργειες">
+        <span class="private-note"><span class="pulse" aria-hidden="true"></span> Τα στοιχεία μένουν στη συσκευή σου</span>
+        <button class="button button-quiet" type="button" id="btnReset"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 3v6h6"/></svg><span>Επαναφορά</span></button>
+        <button class="button button-primary button-small" type="button" id="btnPrint"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z"/></svg><span>Αποθήκευση PDF</span></button>
+      </nav>
+    </header>
+
+    <main id="main" class="main">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-text">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Φορολογικό έτος 2026 <span class="eyebrow-divider"></span> Φτιαγμένο για την Ελλάδα</div>
+          <h1 id="page-title">Δουλεύεις πολύ.<br><span>Πόσα σου μένουν;</span></h1>
+          <p class="lede">Πέρασε τον τζίρο και τα έξοδά σου. Δες με απλά λόγια πόσο κερδίζεις, τι να προσέξεις με τον ΦΠΑ και πόσο πρέπει να χρεώνεις.</p>
+        </div>
+        <div class="intro-icon" aria-hidden="true"><span>€</span><div class="float-star a"></div><div class="float-star b"></div></div>
+      </section>
+
+      <div class="workspace">
+        <div class="form-column">
+          <section class="panel data-panel" aria-labelledby="input-title">
+            <div class="panel-header">
+              <div class="panel-title-wrap"><div class="num-badge">01</div><div><h2 id="input-title">Τα οικονομικά σου στοιχεία</h2><p>Τα αρχικά ποσά είναι παραδείγματα. Αντικατάστησέ τα με τα δικά σου.</p></div></div>
+            </div>
+            <div class="panel-body">
+              <div class="section-mini-title">Έσοδα</div>
+              <div class="field-grid">
+                <div class="field field-wide"><label for="revenue">Μηνιαίος τζίρος <span class="help" title="Συνολικές μηνιαίες πωλήσεις ή αμοιβές. Επέλεξε αν το ποσό περιλαμβάνει ΦΠΑ.">?</span></label><div class="currency-input"><input id="revenue" type="number" min="0" max="1000000000" step="0.01" inputmode="decimal" value="4000"><span>€</span></div></div>
+                <div class="field"><label for="revenueMode">Το ποσό που έγραψες</label><select id="revenueMode"><option value="net" selected>Είναι χωρίς ΦΠΑ</option><option value="gross">Περιλαμβάνει ΦΠΑ</option></select></div>
+                <div class="field"><label for="vatRate">ΦΠΑ πωλήσεων</label><select id="vatRate"><option value="24" selected>24% — κανονικός</option><option value="13">13% — μειωμένος</option><option value="6">6% — υπερμειωμένος</option><option value="17">17% — ειδικός</option><option value="9">9% — ειδικός</option><option value="4">4% — ειδικός</option><option value="0">0% — μηδενικός</option></select></div>
+                <div class="field field-wide"><label class="check-card"><input id="vatExempt" type="checkbox"><span><strong>Δεν χρεώνω ΦΠΑ (απαλλασσόμενο καθεστώς)</strong><small>Δεν υπολογίζεται ΦΠΑ εκροών ούτε έκπτωση ΦΠΑ δαπανών. Μη το επιλέξεις απλώς επειδή η πώληση έχει 0%.</small></span></label></div>
+              </div>
+
+              <div class="section-divider"></div>
+              <div class="section-header-line"><div><div class="section-mini-title">Λειτουργικά έξοδα</div><p class="micro-copy">Γράψε το ποσό <strong>χωρίς ΦΠΑ</strong> ανά κατηγορία. Ο μη εκπιπτόμενος ΦΠΑ προστίθεται στο κόστος.</p></div><button type="button" id="addExpense" class="button button-outline button-small"><span class="plus">+</span> Προσθήκη</button></div>
+              <div class="expenses-list" id="expensesList"></div>
+              <div class="expense-bottom"><span>Συνολικό μηνιαίο κόστος εξόδων</span><strong id="totalExpensesPreview">—</strong></div>
+              <div class="note-box subtle-note"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7h.01"/></svg><p><strong>ΦΠΑ εξόδων:</strong> Τσέκαρε «Έκπτωση ΦΠΑ» μόνο σε δαπάνες για τις οποίες δικαιούσαι συμψηφισμό. Το εργαλείο δεν ελέγχει τη φορολογική νομιμότητα κάθε δαπάνης.</p></div>
+
+              <div class="section-divider"></div>
+              <div class="section-mini-title">Ασφαλιστικές εισφορές</div>
+              <div class="field-grid">
+                <div class="field"><label for="efkaPreset">Κατηγορία e-ΕΦΚΑ (2026)</label><select id="efkaPreset"><option value="260.77" selected>1η — 260,77 €</option><option value="310.93">2η — 310,93 €</option><option value="370.63">3η — 370,63 €</option><option value="443.47">4η — 443,47 €</option><option value="529.45">5η — 529,45 €</option><option value="685.87">6η — 685,87 €</option><option value="160.46">Ειδική — 160,46 €</option><option value="custom">Δικό μου ποσό</option><option value="0">Δεν καταβάλλω / 0 €</option></select></div>
+                <div class="field"><label for="efka">Σύνολο εισφορών τον μήνα</label><div class="currency-input"><input id="efka" type="number" min="0" step="0.01" value="260.77"><span>€</span></div></div>
+              </div>
+              <p class="hint">Οι προεπιλογές περιλαμβάνουν 10 € υπέρ ανεργίας, όχι τυχόν επικουρική, εφάπαξ ή πρόσθετες εισφορές. Αν χρειάζεται, γράψε το πραγματικό ποσό σου.</p>
+            </div>
+          </section>
+
+          <section class="panel config-panel" aria-labelledby="tax-title">
+            <div class="panel-header"><div class="panel-title-wrap"><div class="num-badge">02</div><div><h2 id="tax-title">Εκτίμηση φόρου εισοδήματος</h2><p>Προαιρετική απλοποιημένη εκτίμηση για ατομικές επιχειρήσεις.</p></div></div><label class="switch" aria-label="Ενεργοποίηση εκτίμησης φόρου"><input id="taxEnabled" type="checkbox" checked><span class="switch-track"></span></label></div>
+            <div class="panel-body" id="taxFields">
+              <div class="field-grid">
+                <div class="field"><label for="ageGroup">Ηλικιακή κατηγορία</label><select id="ageGroup"><option value="over30" selected>31 ετών και άνω</option><option value="26to30">26 έως 30 ετών</option><option value="under26">Έως 25 ετών</option></select></div>
+                <div class="field"><label for="children">Εξαρτώμενα τέκνα</label><select id="children"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8+</option></select></div>
+                <div class="field field-wide"><label for="minimumTaxable">Ελάχιστο φορολογητέο εισόδημα σε ετήσια βάση <span class="optional">προαιρετικό</span></label><div class="currency-input"><input id="minimumTaxable" type="number" min="0" step="0.01" placeholder="0" value="0"><span>€</span></div><p class="hint">Συμπλήρωσε μόνο το σχετικό ποσό που έχει προσδιορίσει ο λογιστής σου, αν εφαρμόζεται. Δεν το υπολογίζουμε αυτόματα.</p></div>
+                <div class="field field-wide"><label class="check-card warning-card"><input id="otherIncome" type="checkbox"><span><strong>Έχω και μισθό, σύνταξη ή άλλες ειδικές φορολογικές περιπτώσεις</strong><small>Σε αυτή την περίπτωση δεν εμφανίζουμε εκτίμηση φόρου, γιατί μπορεί να είναι παραπλανητική.</small></span></label></div>
+              </div>
+              <div class="note-box amber-note"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 7v6M12 17h.01"/></svg><p>Η εκτίμηση υποθέτει σταθερούς 12 μήνες και φορολογικά εκπιπτόμενες εισφορές. Δεν καλύπτει όλες τις απαλλαγές, μειώσεις, παρακρατήσεις, λογιστικές διαφορές ή τεκμήρια. Δεν είναι εκκαθάριση της ΑΑΔΕ.</p></div>
+              <label class="inline-check"><input id="firstTimeTax" type="checkbox"><span>Είναι η πρώτη φορά που δηλώνω εισόδημα από επιχειρηματική δραστηριότητα <small>(για την ένδειξη προκαταβολής φόρου)</small></span></label>
+            </div>
+          </section>
+
+          <section class="panel goals-panel" aria-labelledby="goal-title">
+            <div class="panel-header"><div class="panel-title-wrap"><div class="num-badge">03</div><div><h2 id="goal-title">Πόσο πρέπει να χρεώνεις;</h2><p>Υπολόγισε τον στόχο εισοδήματος ανά πελάτη ή ώρα.</p></div></div></div>
+            <div class="panel-body"><div class="field-grid">
+              <div class="field"><label for="targetIncome">Επιθυμητό εισόδημα / μήνα</label><div class="currency-input"><input id="targetIncome" type="number" min="0" step="0.01" value="2000"><span>€</span></div></div>
+              <div class="field"><label for="billableHours">Χρεώσιμες ώρες / μήνα</label><div class="currency-input"><input id="billableHours" type="number" min="0" step="0.5" value="100"><span>ώρες</span></div></div>
+              <div class="field field-wide"><label for="avgJobValue">Μέση αμοιβή ανά πελάτη ή έργο (χωρίς ΦΠΑ)</label><div class="currency-input"><input id="avgJobValue" type="number" min="0" step="0.01" value="200"><span>€</span></div></div>
+            </div><div class="target-summary"><div><span>Απαραίτητος τζίρος χωρίς ΦΠΑ</span><strong id="requiredRevenue">—</strong></div><div><span>Ελάχιστη αμοιβή / ώρα</span><strong id="requiredHourly">—</strong></div><div><span>Πελάτες / μήνα</span><strong id="requiredClients">—</strong></div></div><p id="goalExplanation" class="hint"></p></div>
+          </section>
+        </div>
+
+        <div class="results-column">
+          <section class="panel result-panel" aria-labelledby="results-title">
+            <div class="result-top"><div class="result-top-line"><span class="result-label">Η οικονομική σου εικόνα</span><span class="live-label"><span class="live-dot"></span> Ζωντανός υπολογισμός</span></div><h2 id="results-title">Τι σου μένει κάθε μήνα</h2><p class="result-subtitle" id="afterTaxLabel">Μετά από λειτουργικά έξοδα, ΕΦΚΑ και εκτίμηση φόρου εισοδήματος</p><div class="hero-amount" id="netIncome" aria-live="polite">—</div><div class="hero-foot"><span id="profitStatus" class="status-pill">—</span><span id="profitMargin">—</span></div></div>
+            <div class="result-body"><div class="metric-grid">
+              <div class="metric"><span>Έσοδα χωρίς ΦΠΑ</span><strong id="metricRevenue">—</strong></div>
+              <div class="metric"><span>Λειτουργικά έξοδα</span><strong id="metricExpenses">—</strong></div>
+              <div class="metric"><span>Εισφορές e-ΕΦΚΑ</span><strong id="metricEfka">—</strong></div>
+              <div class="metric"><span>Κέρδος πριν τον φόρο</span><strong id="metricPreTax">—</strong></div>
+              <div class="metric"><span>Εκτίμηση φόρου / μήνα</span><strong id="metricTax">—</strong></div>
+              <div class="metric"><span>Αποτέλεσμα / ώρα</span><strong id="metricHourly">—</strong></div>
+            </div>
+              <div class="breakdown"><div class="breakdown-top"><h3>Πού πηγαίνουν τα έσοδα</h3><span>Μηνιαία κατανομή</span></div><div class="stacked-chart" id="distribution" role="img" aria-label="Κατανομή εσόδων"></div><div class="legend"><span><i class="legend-dot mint"></i> Διαθέσιμο</span><span><i class="legend-dot violet"></i> Έξοδα</span><span><i class="legend-dot blue"></i> ΕΦΚΑ</span><span><i class="legend-dot orange"></i> Φόρος</span></div><p class="hint" id="distributionNote"></p></div>
+              <div class="vat-box"><div><div class="vat-label">Εκτιμώμενος ΦΠΑ προς απόδοση / μήνα</div><strong id="vatDue">—</strong></div><span class="vat-icon" aria-hidden="true">%</span><p id="vatExplanation">—</p></div>
+              <div class="tax-box"><div class="tax-box-title">Ενδεικτική ετήσια φορολογική εικόνα</div><div class="tax-row"><span>Εκτιμώμενο φορολογητέο εισόδημα</span><strong id="annualTaxable">—</strong></div><div class="tax-row"><span>Εκτίμηση ετήσιου φόρου</span><strong id="annualTax">—</strong></div><div class="tax-row"><span>Ενδεικτική προκαταβολή φόρου (έτος)</span><strong id="advanceTax">—</strong></div><p class="hint">Η προκαταβολή αφορά ρευστότητα και συμψηφίζεται με φόρο επόμενης χρονιάς. Δεν αφαιρείται δεύτερη φορά από το παραπάνω κέρδος.</p></div>
+            </div>
+          </section>
+          <section class="panel scenario-panel" aria-labelledby="scenario-title"><div class="panel-header"><div class="panel-title-wrap"><div class="num-badge alt-badge">↗</div><div><h2 id="scenario-title">Δοκίμασε ένα σενάριο</h2><p>Δες πώς αλλάζει το αποτέλεσμα με διαφορετικό τζίρο ή έξοδα.</p></div></div></div><div class="panel-body">
+            <div class="slider-heading"><label for="salesChange">Μεταβολή τζίρου</label><strong id="salesChangeLabel">+0%</strong></div><input id="salesChange" type="range" min="-50" max="100" step="5" value="0"><div class="range-ends"><span>-50%</span><span>+100%</span></div>
+            <div class="slider-heading spacing-top"><label for="expenseChange">Μεταβολή εξόδων</label><strong id="expenseChangeLabel">+0%</strong></div><input id="expenseChange" type="range" min="-30" max="50" step="5" value="0"><div class="range-ends"><span>-30%</span><span>+50%</span></div>
+            <div class="scenario-comparison"><div><span>Σήμερα</span><strong id="scenarioBase">—</strong></div><div class="arrow-between" aria-hidden="true">→</div><div><span>Με το σενάριο</span><strong id="scenarioNew">—</strong></div></div><p class="scenario-difference" id="scenarioDifference">—</p>
+          </div></section>
+          <div class="export-panel"><div><strong>Πάρε μαζί σου την ανάλυση</strong><p>Αναφορά PDF, αντίγραφο δεδομένων και CSV — χωρίς λογαριασμό.</p></div><div class="export-actions"><button class="button button-white" id="btnSaveData" type="button">Αρχείο JSON</button><button class="button button-white" id="btnCSV" type="button">Αρχείο CSV</button><label class="button button-white import-button" for="fileImport">Εισαγωγή JSON</label><input type="file" id="fileImport" accept=".json,application/json" hidden></div></div>
+        </div>
+      </div>
+
+      <section class="responsibility" aria-labelledby="disclaimer-title"><div class="responsibility-icon" aria-hidden="true">i</div><div><h2 id="disclaimer-title">Χρήσιμος υπολογιστής, όχι φορολογική συμβουλή</h2><p>Το dwrean Profit απευθύνεται κυρίως σε ελεύθερους επαγγελματίες και ατομικές επιχειρήσεις με μια βασική δραστηριότητα. Οι υπολογισμοί είναι ενδεικτικοί: δεν καλύπτουν όλες τις ιδιαιτερότητες ΦΠΑ, myDATA, απαλλαγών, παρακρατήσεων, άλλων εισοδημάτων και ελάχιστου τεκμαρτού καθαρού εισοδήματος. Οι λογιστικές δαπάνες θεωρούνται εκπιπτόμενες μόνο όταν τις δηλώσεις έτσι. Για φορολογικές αποφάσεις συμβουλεύσου τον λογιστή σου.</p><div class="source-links"><a href="https://minfin.gov.gr/forologiki-politiki/forologikos-odigos/forologia-eisodimatos/" target="_blank" rel="noopener noreferrer">Υπουργείο Οικονομικών — Φορολογία 2026 ↗</a><a href="https://www.aade.gr/exypiretisi-enimerosi/hristikoi-odigoi/enarxi-epiheirimatikis-drastiriotitas/basikoi-syntelestes-fpa" target="_blank" rel="noopener noreferrer">ΑΑΔΕ — ΦΠΑ ↗</a><a href="https://www.e-efka.gov.gr/el/asphalismenoi/me-misthotoi/neo-systhma-asfalistikon-eisforon/neoi-epaggelmaties" target="_blank" rel="noopener noreferrer">e-ΕΦΚΑ — Εισφορές 2026 ↗</a></div></div></section>
+    </main>
+    <footer class="footer"><span>© <span id="copyrightYear">2026</span> <a href="https://www.dwrean.net/" target="_blank" rel="noopener noreferrer">dwrean.net</a> · dwrean Profit v1.0</span><span>Χωρίς εγγραφή · Χωρίς αποστολή δεδομένων · Δωρεάν για όλους</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <section id="printReport" class="print-report" aria-label="Εκτυπώσιμη αναφορά"><header><div class="print-logo">dwrean <span>Profit</span></div><div>Ενδεικτική οικονομική αναφορά · Φορολογικό έτος 2026</div></header><h1>Η οικονομική σου εικόνα</h1><p id="printDate"></p><table><tbody id="printRows"></tbody></table><h2>Τι πρέπει να γνωρίζεις</h2><p id="printNotes"></p><p class="print-disclaimer">Το εργαλείο παρέχει ενδεικτικούς υπολογισμούς και δεν υποκαθιστά λογιστή ή φορολογική εκκαθάριση. Πηγές: minfin.gov.gr · aade.gr · e-efka.gov.gr. Δημιουργία: dwrean.net.</p></section>
+</body>
+</html>

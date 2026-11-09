@@ -1,0 +1,17 @@
+name: "Πρόταση λειτουργίας"
+description: "Πρότεινε μια ιδέα για το dwrean Profit"
+title: "[Idea]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: "Ποια λειτουργία προτείνεις;"
+      placeholder: "Περιέγραψε με απλά λόγια την πρότασή σου..."
+    validations:
+      required: true
+  - type: textarea
+    id: usefulness
+    attributes:
+      label: "Πώς θα βοηθούσε τους χρήστες;"
+      description: "Τι πρόβλημα θα έλυνε;"
