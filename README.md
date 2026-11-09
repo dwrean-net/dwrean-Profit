@@ -4,10 +4,11 @@
 
 <br>
 
-[![Ελληνική εφαρμογή](https://img.shields.io/badge/Γλώσσα-Ελληνικά-36bfa0?style=flat-square)](#)
-[![Δωρεάν](https://img.shields.io/badge/Κόστος-100%25%20δωρεάν-0d9878?style=flat-square)](#)
-[![Privacy](https://img.shields.io/badge/Ιδιωτικότητα-Τοπικοί%20υπολογισμοί-334155?style=flat-square)](#)
+![Ελληνική εφαρμογή](https://img.shields.io/badge/Γλώσσα-Ελληνικά-36bfa0?style=flat-square)
+![Δωρεάν](https://img.shields.io/badge/Κόστος-100%25%20δωρεάν-0d9878?style=flat-square)
+![Privacy](https://img.shields.io/badge/Ιδιωτικότητα-Τοπικοί%20υπολογισμοί-334155?style=flat-square)
 [![MIT](https://img.shields.io/badge/Άδεια-MIT-64748b?style=flat-square)](LICENSE)
+[![Tests](https://github.com/dwrean-net/dwrean-Profit/actions/workflows/test.yml/badge.svg)](https://github.com/dwrean-net/dwrean-Profit/actions/workflows/test.yml)
 
 ### Δουλεύεις πολύ. **Πόσα σου μένουν;**
 
