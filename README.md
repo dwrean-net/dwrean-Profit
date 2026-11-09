@@ -14,9 +14,9 @@
 
 Ένας δωρεάν υπολογιστής κερδοφορίας στα ελληνικά, σχεδιασμένος για **ελεύθερους επαγγελματίες και ατομικές επιχειρήσεις** στην Ελλάδα.
 
-**[Άνοιξε το dwrean Profit](https://dwrean-net.github.io/dwrean-Profit/)** · **[Οδηγός χρήσης](docs/USER-GUIDE.md)** · **[dwrean.net](https://www.dwrean.net/)**
+**[Άνοιξε το dwrean Profit](https://profit.dwrean.net/)** · **[Οδηγός χρήσης](docs/USER-GUIDE.md)** · **[dwrean.net](https://www.dwrean.net/)**
 
-<sub>Ο σύνδεσμος εφαρμογής λειτουργεί μόλις ενεργοποιηθεί το GitHub Pages στις ρυθμίσεις του repository.</sub>
+<sub>Επίσημη διεύθυνση: <a href="https://profit.dwrean.net/">profit.dwrean.net</a> · Ασφαλής σύνδεση HTTPS.</sub>
 
 </div>
 
@@ -68,9 +68,9 @@ python -m http.server 8000
 
 και άνοιξε `http://localhost:8000/`.
 
-**Για δημοσίευση στο GitHub Pages:** πήγαινε στο **Settings → Pages → Build and deployment**, επίλεξε **Deploy from a branch**, branch **main**, folder **/(root)** και πάτησε **Save**. Μετά τη δημοσίευση, η εφαρμογή θα είναι διαθέσιμη στη διεύθυνση:
+**Για φιλοξενία στο GitHub Pages:** πήγαινε στο **Settings → Pages → Build and deployment**, επίλεξε **Deploy from a branch**, branch **main**, folder **/(root)** και πάτησε **Save**. Μετά τη δημοσίευση, η εφαρμογή θα είναι διαθέσιμη στη διεύθυνση:
 
-**https://dwrean-net.github.io/dwrean-Profit/**
+**https://profit.dwrean.net/**
 
 ## Τι περιλαμβάνει το repository
 
